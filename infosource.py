@@ -53,15 +53,9 @@ def infosource(signal_type,f,fs,amp,T):
         fs, m_t = wavfile.read("waving.wav")
 
         if m_t.ndim > 1:
-            m_t = m_t.mean(axis=1)
-
-        if np.issubdtype(m_t.dtype, np.integer):
-            max_val = np.iinfo(m_t.dtype).max
-            m_t = m_t.astype(np.float64) / max_val
-        else:
-            m_t = m_t.astype(np.float64)
-
-        t = np.arange(len(m_t)) / fs + T
+            m_t = m_t[:, 0]
+        m_t = m_t.astype(np.float64)
+        t = np.arange(len(m_t)) / fs
 
     elif signal_type == "dial_tone":
         f1 = 350

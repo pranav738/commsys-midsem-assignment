@@ -34,7 +34,7 @@ def txmod(mod_scheme, m_t, fc, t):
     if mod_scheme == "FM":
         start_time = 0
         stop_time = 1
-        kf = 2 * np.pi * 0.5  # Frequency sensitivity (adjust as needed)
+        kf = 2 * np.pi * 5  # Frequency sensitivity (adjust as needed)
         # Integrate m_t with respect to time
         dt = t[1] - t[0]
         integral_mt = np.cumsum(m_t) * dt
