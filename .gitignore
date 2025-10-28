@@ -1,0 +1,15 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+real_time_song_input.png
+rts_recovered_after_AM_ED.png
+rts_recovered_after_DSB-SC_SD.png
+rts_recovered_after_FM_SD.png
