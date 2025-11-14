@@ -48,6 +48,11 @@ def infosource(signal_type,f,fs,amp,T):
         t = np.linspace(start_time+T, stop_time+T, int(fs * (stop_time - start_time)) + 1)
         m_t =  2 * f * np.sinc(2 * f* (t+0.5))  # Shifted to center the main lobe within the interval
         
+    elif signal_type == "idle":
+        start_time = 0
+        stop_time = 1
+        t = np.linspace(start_time + T, stop_time + T, int(fs * (stop_time - start_time)) + 1)
+        m_t = np.zeros_like(t)
 
     elif signal_type == "real_time_song":
         fs, m_t = wavfile.read("waving.wav")
